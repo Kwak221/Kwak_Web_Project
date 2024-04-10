@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "express-generator": "^4.16.1"
+    "cors": "^2.8.5",
+    "express-generator": "^4.16.1",
+    "mongoose": "^8.3.1"
   }
 }

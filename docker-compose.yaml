@@ -1,0 +1,30 @@
+version: '3'
+services:
+  react:
+    container_name: react-container
+    build: ./client-movie
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_API_URL: "http://localhost:3000"
+      FAKE: "For Illustration purposes"
+    depends_on:
+      - express
+      - mongo
+  express:
+    container_name: express-container
+    build: ./server-movie
+    ports: 
+      - "3001:3001"
+    depends_on:
+      - mongo
+  mongo:
+    container_name: mongo-container
+    build: ./mongodb
+    ports:
+      - "27018:27017"
+    volumes:
+      - ./mongodb/mongo-data:/data/db
+  
+volumes:
+  - mongo-data:

@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const mongoose = require('mongoose');
+const cors = require('cors')
 
 mongoose.connect('mongodb://localhost:27017/webProj')
 const db = mongoose.connection;
@@ -23,11 +24,18 @@ const contactInfo = new mongoose.Schema({
 
 const ContactModel = mongoose.model('Contact', contactInfo);
 
+app.use(express.urlencoded({ extended: true })) 
+
 app.use(express.json());
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Home Page' });
+});
+
+/* GET about page. */
+router.get('/about', function(req, res, next) {
+  res.render('about', { title: 'About Page' });
 });
 
 
@@ -153,11 +161,19 @@ router.delete("/contacts/:id", async (req, res) => {
   }
 });
 
+var corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
 // Use the router for all routes
 app.use("/", router);
 
 app.listen(3001, () => {
   console.log("API is running on port: 3000");
 });
+   
+app.listen(5000,  
+   () => console.log(`⚡️[bootup]: Server is running at port: 5000`));
 
 module.exports = router;
