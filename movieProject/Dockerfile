@@ -2,7 +2,7 @@
 FROM node:16
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /movieProject
 
 # Copy package.json and package-lock.json files to the working directory
 COPY package*.json ./
@@ -17,7 +17,7 @@ COPY . .
 EXPOSE 3001
 
 # Define environment variables
-ENV MONGO_URI=mongodb://mongo:27017/demo
+ENV MONGO_URI=mongodb://mongo:27017/webProj
 ENV JWT_KEY=15e281e043b9e4f4b2ee0073e2635eba4fab2f237e82a63a766578ff6d7de345
 
 # Define the command to run the Express app
