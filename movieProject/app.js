@@ -1,3 +1,17 @@
+/*
+  I am leaving a counter here for how many times I work on the 'RESTART' branch. Namely:
+    - How Many Times I restart
+    - Hour many hours wasted
+    - Reason for Restart
+  
+  Restart 1:
+    - 1st Restart
+    - probably about <1 hour wasted
+    - Reason: 
+      - React Not Install 
+      - Mongodb installed wrong (maybe?) 
+      - Docker Confusion
+*/
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
