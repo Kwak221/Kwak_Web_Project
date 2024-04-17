@@ -1,2 +1,9 @@
 
 /mongodb/mongo-data
+mongodb/mongo-data/WiredTiger.wt
+mongodb/mongo-data/WiredTiger.turtle
+mongodb/mongo-data/sizeStorer.wt
+mongodb/mongo-data/mongod.lock
+mongodb/mongo-data/journal/WiredTigerLog.0000000001
+mongodb/mongo-data/index-3-8763569835751681036.wt
+mongodb/mongo-data/collection-2-8763569835751681036.wt
