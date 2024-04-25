@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import DualForm from './Components/DualForm/DualForm';
+import MovieForm from './Components/MovieForm/MovieForm';
+import MovieList from './Components/MovieList/MovieList';
 import './App.css';
 
 const App = () => {
+  const [Movies, setMovies] = useState([]);
   const [username, setUsername] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
@@ -18,7 +21,11 @@ const App = () => {
 
   const renderAuthenticatedApp = () => (
     <>
-      <div>{isAuthenticated ? `Welcome back ${username}` : " "}</div>
+      <div>
+        {isAuthenticated ? `Welcome back ${username}` : " "}
+        <MovieForm setMovies={setMovies} />
+        <MovieList list={Movies} setMovies={setMovies} />
+      </div>
     </>
   );
 

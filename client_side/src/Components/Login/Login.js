@@ -16,7 +16,7 @@ const Login = ({ onLoginSuccess, setUsername }) => {
         e.preventDefault();
         setError('');
 
-        fetch(`${process.env.EXPRESS_URL}/api/users/login`, {
+        fetch(`${process.env.REACT_APP_EXPRESS_URL}/api/users/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
