@@ -23,7 +23,7 @@ const contactInfo = new mongoose.Schema({
 
 const ContactModel = mongoose.model('Contact', contactInfo);
 
-app.use(express.json());
+//app.use(express.json());
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -154,10 +154,10 @@ router.delete("/contacts/:id", async (req, res) => {
 });
 
 // Use the router for all routes
-app.use("/", router);
+/*app.use("/", router);
 
 app.listen(3001, () => {
   console.log("API is running on port: 3000");
-});
+});*/
 
 module.exports = router;

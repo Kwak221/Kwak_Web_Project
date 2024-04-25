@@ -14,8 +14,8 @@ function Register({ onRegisterSuccess, setUsername }) {
 
     const registerUser = async (e) => {
         e.preventDefault();
-
-        fetch(`${process.env.EXPRESS_URL}/api/users/register`, {
+        
+        fetch(`${process.env.REACT_APP_EXPRESS_URL}/api/users/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
