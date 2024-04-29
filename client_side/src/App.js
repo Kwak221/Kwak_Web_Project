@@ -12,6 +12,19 @@ const App = () => {
     if (!isAuthenticated)
       return;
 
+      fetch(`${process.env.REACT_APP_EXPRESS_URL}/index/movies/`)
+      .then(resp => {
+        if (!resp.ok) {
+          throw new Error('Network response was not OK');
+        }
+        return resp.json();
+      })
+      .then((data) => {
+        setMovies(data);
+      }).catch((e) => {
+        console.log(e)
+      })
+
   }, [isAuthenticated]);
 
 
@@ -23,7 +36,7 @@ const App = () => {
     <>
       <div>
         {isAuthenticated ? `Welcome back ${username}` : " "}
-        <MovieForm setMovies={setMovies} />
+        <MovieForm setMovies={setMovies}/>
         <MovieList list={Movies} setMovies={setMovies} />
       </div>
     </>

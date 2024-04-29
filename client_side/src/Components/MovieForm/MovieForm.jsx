@@ -1,28 +1,34 @@
 import React, { useState } from 'react';
 
-
 const MovieForm = ({ setMovies }) => {
-    const [newMovie, setNewMovie] = useState('');
+    const [moviename, setMovieName] = useState('');
+    const [movierating, setMovieRating] = useState('');
+    const [movienotes, setMovieNotes] = useState('');
 
-    const [formData, setFormData] = useState({
-        name: '',
-        ating: '',
-        notes: ''
-    });
+    const handleChangeTitle = (e) => {
+        setMovieName(e.target.value);
+    }; //handle changer for the form object
 
-    const handleInputChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+    const handleChangeRating = (e) => {
+        setMovieRating(e.target.value);
+    };
+
+    const handChangeNotes = (e) => {
+        setMovieNotes(e.target.value);
     };
 
     const createMovie = () => {
-        if (!newMovie) return; // Don't add empty tasks
-        const movie = { 
-            name: formData.name,
-            rating: formData.rating,
-            notes: formData.notes
+        if(!setMovieName) return; //no empty movies
+        if(!setMovieRating) return;
+        if(!setMovieNotes) return;
+
+        const movie = {
+            name : moviename,
+            rating : movierating,
+            notes : movienotes 
         };
 
-        fetch(`${process.env.EXPRESS_URL}/index/movies`, {
+        fetch(`${process.env.REACT_APP_EXPRESS_URL}/index/movies`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,42 +40,41 @@ const MovieForm = ({ setMovies }) => {
             }
             return response.json();
         }).then(data => {
-            setMovies(movie => [movie, data]);
-            setNewMovie('');
+            setMovies(Movies => [...Movies, data]);
+            setMovieName('');
+            setMovieRating('');
+            setMovieNotes('');
         }).catch(e => {
             console.error(e);
         });
     };
 
     return (
-        <div>
-            <h2>Add New Movie</h2>
-            <form onSubmit={createMovie}>
-                <input
-                    name="moviename"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="Title"
-                    required
-                />
-                <input
-                    rating="movierating"
-                    value={formData.rating}
-                    onChange={handleInputChange}
-                    placeholder="Rating Out of 10"
-                    required
-                />
-                <input
-                    notes="movienotes"
-                    value={formData.notes}
-                    onChange={handleInputChange}
-                    placeholder="Notes"
-                    required
-                />
-                <button type="submit">Submit</button>
-            </form>
+        <div className='dataform'>
+            <input
+                type='text'
+                value={moviename}
+                onChange={handleChangeTitle}
+                placeholder='Title'
+                required
+            />
+            <input
+                type='number'
+                value={movierating}
+                onChange={handleChangeRating}
+                placeholder='Rating, 1-10'
+                required
+            />
+            <input
+                type='text'
+                value={movienotes}
+                onChange={handChangeNotes}
+                placeholder='Notes'
+                required 
+            />
+            <button onClick={createMovie}>Add Movie</button>
         </div>
     );
-}
+};
 
 export default MovieForm;

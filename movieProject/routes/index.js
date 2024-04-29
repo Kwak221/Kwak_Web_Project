@@ -27,7 +27,7 @@ const ContactModel = mongoose.model('Contact', contactInfo);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Movies' });
 });
 
 

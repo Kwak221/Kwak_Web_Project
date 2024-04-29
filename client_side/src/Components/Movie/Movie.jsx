@@ -3,10 +3,10 @@ import React from 'react';
 const Movie = ({ id, value, onDelete }) => {
     return (
         <li>
-            <span className="moviename">{value.name}</span>
-            <span className="movierating">{value.rating}</span>
-            <span className="movienotes">{value.notes}</span>
-            <button onClick={onDelete}>Delete</button>
+            <span className="moviename">Title: {value.name}</span><br/>
+            <span className="movierating">Rating: {value.rating} out of 10</span><br/>
+            <span className="movienotes">Notes: {value.notes}</span><br/>
+            <button onClick={onDelete}>Delete</button><br/><br/>
         </li>
     );
 };

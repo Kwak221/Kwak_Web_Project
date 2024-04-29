@@ -3,7 +3,7 @@ import Movie from "../Movie/Movie";
 
 const MovieList = ({ list, setMovies }) => {
     const onDelete = (id) => {
-        fetch(`${process.env.EXPRESS_URL}/index/movies/${id}`, {
+        fetch(`${process.env.REACT_APP_EXPRESS_URL}/index/movies/${id}`, {
             method: 'DELETE'
         }).then(response => {
             if (!response.ok) {
