@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import DualForm from './Components/DualForm/DualForm';
 import MovieForm from './Components/MovieForm/MovieForm';
 import MovieList from './Components/MovieList/MovieList';
+import ContactForm from './Components/ContactForm/ContactForm';
 import './App.css';
 
 const App = () => {
   const [Movies, setMovies] = useState([]);
   const [username, setUsername] = useState("");
+  const [contact, setContact] = useState("")
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
     if (!isAuthenticated)
@@ -38,6 +40,7 @@ const App = () => {
         {isAuthenticated ? `Welcome back ${username}` : " "}
         <MovieForm setMovies={setMovies}/>
         <MovieList list={Movies} setMovies={setMovies} />
+        <ContactForm setContact={setContact}/>
       </div>
     </>
   );
