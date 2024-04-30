@@ -45,6 +45,7 @@ const ContactForm = ({ setContact }) => {
             setContactName('');
             setContactNumber('');
             setContactEmail('');
+            setMessage('Info Sent, Thank You!');
         }).catch(e => {
             console.error(e);
         });

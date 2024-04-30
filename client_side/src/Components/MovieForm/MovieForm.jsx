@@ -44,7 +44,6 @@ const MovieForm = ({ setMovies }) => {
             setMovieName('');
             setMovieRating('');
             setMovieNotes('');
-            setMessage('Info Sent, Thank You!');
         }).catch(e => {
             console.error(e);
         });

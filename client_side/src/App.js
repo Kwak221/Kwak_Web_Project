@@ -3,6 +3,7 @@ import DualForm from './Components/DualForm/DualForm';
 import MovieForm from './Components/MovieForm/MovieForm';
 import MovieList from './Components/MovieList/MovieList';
 import ContactForm from './Components/ContactForm/ContactForm';
+import AboutPage from './Components/AboutPage/AboutPage';
 import './App.css';
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
         <MovieForm setMovies={setMovies}/>
         <MovieList list={Movies} setMovies={setMovies} />
         <ContactForm setContact={setContact}/>
+        <AboutPage/>
       </div>
     </>
   );
