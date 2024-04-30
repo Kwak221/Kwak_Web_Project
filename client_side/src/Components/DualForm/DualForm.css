@@ -1,0 +1,10 @@
+.auth-container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: cornsilk;
+}
+  
+  .welcome-back, .auth-form {
+    flex: 1;
+}

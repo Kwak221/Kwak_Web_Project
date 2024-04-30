@@ -37,8 +37,8 @@ const App = () => {
 
   const renderAuthenticatedApp = () => (
     <>
-      <div>
-        {isAuthenticated ? `Welcome back ${username}` : " "}
+      <div className='bodymain'>
+        {isAuthenticated ? `Welcome back, ${username}!` : " "}
         <MovieForm setMovies={setMovies}/>
         <MovieList list={Movies} setMovies={setMovies} />
         <ContactForm setContact={setContact}/>

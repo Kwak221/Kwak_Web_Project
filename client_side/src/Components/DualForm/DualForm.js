@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Login from '../Login/Login';
 import Register from '../Registration/Register';
+import './DualForm.css'
 
 const DualForm = ({ onLoginSuccess, onRegisterSuccess, setUsername }) => {
   const [isLoginView, setIsLoginView] = useState(true);

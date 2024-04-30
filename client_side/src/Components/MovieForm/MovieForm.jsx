@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './MovieForm.css'
 
 const MovieForm = ({ setMovies }) => {
     const [moviename, setMovieName] = useState('');
@@ -72,7 +73,7 @@ const MovieForm = ({ setMovies }) => {
                 placeholder='Notes'
                 required 
             />
-            <button onClick={createMovie}>Add Movie</button>
+            <button className='addbutton' onClick={createMovie}>Add Movie</button>
         </div>
     );
 };

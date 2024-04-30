@@ -1,0 +1,25 @@
+.movie-list {
+    list-style: none;
+    padding: 0;
+}
+
+.movie-list li {
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.movie-list li button {
+    text-align: center;
+    margin-left: 10px;
+    background-color: #ff4444;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.movie-list  li button:hover {
+    background-color: #ee2222;
+}

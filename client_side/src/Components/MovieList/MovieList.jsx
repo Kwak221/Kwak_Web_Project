@@ -1,5 +1,6 @@
 import React from 'react';
 import Movie from "../Movie/Movie";
+import './MovieList.css'
 
 const MovieList = ({ list, setMovies }) => {
     const onDelete = (id) => {

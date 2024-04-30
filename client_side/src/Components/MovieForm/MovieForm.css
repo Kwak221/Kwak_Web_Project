@@ -1,0 +1,16 @@
+.addbutton {
+    background-color: #28da48;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.addbutton :hover {
+    background-color: rgb(21, 13, 182);
+}
+
+.dataform input {
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 4px;
+}
