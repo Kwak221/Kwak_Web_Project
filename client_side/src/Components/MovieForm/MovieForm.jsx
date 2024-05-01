@@ -67,6 +67,8 @@ const MovieForm = ({ setMovies }) => {
                 value={movierating}
                 onChange={handleChangeRating}
                 placeholder='Rating, 1-10'
+                min='1'
+                max='10'
                 required
             />
             <input
