@@ -27,11 +27,11 @@ function Register({ onRegisterSuccess, setUsername }) {
             }
             return response.json();
         }).then(data => {
-            setMessage('User registered successfully!');
+            setMessage('Registration Succes!');
             onRegisterSuccess();
             setUsername(data.user.username);
         }).catch(err => {
-            setMessage('Failed to login. Please check your credentials.');
+            setMessage('Error in Registration. Please Try Again');
             console.error('Login error', err);
         });
 

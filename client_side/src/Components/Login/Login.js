@@ -32,7 +32,7 @@ const Login = ({ onLoginSuccess, setUsername }) => {
             onLoginSuccess();
             setUsername(data.user.username);
         }).catch(err => {
-            setError('Failed to login. Please check your credentials.');
+            setError('Invalid Email or Password, please check again!');
             console.error('Login error', err);
         });
     };
