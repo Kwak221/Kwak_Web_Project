@@ -5,6 +5,7 @@ const MovieForm = ({ setMovies }) => {
     const [moviename, setMovieName] = useState('');
     const [movierating, setMovieRating] = useState('');
     const [movienotes, setMovieNotes] = useState('');
+    const [message, setMessage] = useState('');
 
     const handleChangeTitle = (e) => {
         setMovieName(e.target.value);
@@ -45,6 +46,7 @@ const MovieForm = ({ setMovies }) => {
             setMovieName('');
             setMovieRating('');
             setMovieNotes('');
+            setMessage('Movie Added!')
         }).catch(e => {
             console.error(e);
         });
@@ -52,6 +54,7 @@ const MovieForm = ({ setMovies }) => {
 
     return (
         <div className='dataform'>
+            {message && <p>{message}</p>}
             <input
                 type='text'
                 value={moviename}

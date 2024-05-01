@@ -13,11 +13,11 @@
 .movie-list li button {
     text-align: center;
     margin-left: 10px;
-    background-color: #ff4444;
+    background-color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .movie-list  li button:hover {
